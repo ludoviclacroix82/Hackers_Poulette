@@ -3,9 +3,9 @@ session_start();
 
 $arrayGender = array(
     '' => 'Select your gender',
-    'male' => 'Male',
-    'female' => 'Female',
-    'nonbinary' => 'Non-binary',
+    'Mister' => 'Male',
+    'Miss' => 'Female',
+    'Mx' => 'Non-binary',
     'noreply' => 'Prefer not to say'
 );
 
@@ -31,16 +31,18 @@ $arraySubject = array(
     <main>
         <section class="form-control from">
             <?php 
-
+                $delai = 5; 
+                $url = './';
                 if(!empty($_SESSION['sendMail'])){
                     if($_SESSION['sendMail'] == true){    
                         echo '<div class="alert alert-success" role="alert">Your email has been successfully sent, and a copy has been sent to you at the address <b>'.$_SESSION['email'].'</b></div>';
                         session_destroy();
                     }else{
-                        echo '<div class="alert alert-danger" role="alert">YMessage could not be sent.</div>';
+                        echo '<div class="alert alert-danger" role="alert">Message could not be sent.</div>';
 
                     }
-
+                    
+                    header("Refresh: $delai;url=$url");
                 }
             ?>
             
@@ -51,7 +53,7 @@ $arraySubject = array(
                         <?php
                         foreach ($arrayGender as $key => $value) {
                             $disabled = ($key == '') ? 'disabled' : '';
-                            $selected = (!empty($_SESSION['gender']) && $_SESSION['gender'] == $key) ? 'selected' : '';
+                            $selected = (!empty($_SESSION['gender']) && $_SESSION['gender'] == $key) ? 'selected' : (($key == '') ? 'selected' : '');
                             echo '<option value="' . $key . '" ' . $selected . ' ' . $disabled . '>' . $value . '</option>';
                         }
                         ?>

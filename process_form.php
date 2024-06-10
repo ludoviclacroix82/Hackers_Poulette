@@ -15,7 +15,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     //récuperation des data Post
     $gender = htmlspecialchars(trim($_POST['gender']));
-    $genderSend = ($gender === 'noreply')?'':$gende; // Si le user n'a pas voulu mettre son genre 
+    $genderSend = ($gender === 'noreply')?'':$gender; // Si le user n'a pas voulu mettre son genre 
+
 
     $name = htmlspecialchars(trim($_POST['name']));
     $lastName = htmlspecialchars(trim($_POST['lastName']));
@@ -58,13 +59,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $mail->Port = 587;
 
             // Destinataires
-            $mail->setFrom($email, $name);
-            $mail->addAddress('lac_ludo@hotmail.com', 'Destinataire');
+            $mail->setFrom('lac_ludo@hotmail.com', 'support Hackeur Poulettes');
+            $mail->addAddress('lac_ludo@hotmail.com', 'support Hackeur Poulettes');
+            $mail->addAddress($email, $name .' ' .$lastName);
+
 
             // Contenu de l'email
             $mail->isHTML(true);
             $mail->Subject = $subject;
-            $mail->Body = $genderSend.''.$name . ' ' . $lastName . ' from:' . $country . '<br>' . $message;
+            $mail->Body = $genderSend.' '.$name . ' ' . $lastName . ' from:' . $country . '<br><br>' . $message;
 
             $mail->send();
             $_SESSION['sendMail'] = true;
