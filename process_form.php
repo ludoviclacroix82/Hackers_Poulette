@@ -17,13 +17,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $gender = htmlspecialchars(trim($_POST['gender']));
     $genderSend = ($gender === 'noreply')?'':$gender; // Si le user n'a pas voulu mettre son genre 
 
-
-    $name = htmlspecialchars(trim($_POST['name']));
-    $lastName = htmlspecialchars(trim($_POST['lastName']));
-    $email = htmlspecialchars(trim($_POST['email']));
-    $country = htmlspecialchars(trim($_POST['country']));
-    $subject = htmlspecialchars(trim($_POST['subject']));
-    $message = htmlspecialchars(trim($_POST['message']));
+    $gender = isset($_POST['gender']) ? htmlspecialchars(trim($_POST['gender'])) : '';
+    $name = isset($_POST['name']) ? htmlspecialchars(trim($_POST['name'])) : '';
+    $lastName = isset($_POST['lastName']) ? htmlspecialchars(trim($_POST['lastName'])) : '';
+    $email = isset($_POST['email']) ? htmlspecialchars(trim($_POST['email'])) : '';
+    $country = isset($_POST['country']) ? htmlspecialchars(trim($_POST['country'])) : '';
+    $subject = isset($_POST['subject']) ? htmlspecialchars(trim($_POST['subject'])) : '';
+    $message = isset($_POST['message']) ? htmlspecialchars(trim($_POST['message'])) : '';
 
     $_SESSION['gender'] = $gender;
     $_SESSION['name'] = $name;
