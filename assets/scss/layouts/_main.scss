@@ -1,0 +1,33 @@
+main {
+    .from {
+        width: 50% !important;
+        margin: 0 auto;
+        border: 0;
+        padding: 20px 0px;
+
+        form {
+            width: 100%;
+            border: 1px solid #ced4da;
+            border-radius: 15px;
+            padding: 20px;
+
+            input,select {
+                width: 60% !important;
+            }
+
+            .userName {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                input[type=text] {
+                    width: 49.5% !important;
+                }
+            }
+            .error{
+                color: red;
+            }
+        }
+    }
+
+}
