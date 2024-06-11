@@ -1,0 +1,22 @@
+footer {
+    width: 100%;
+    height: 120px;
+    background-color: $primaryColor;
+    display: flex !important;
+    flex-direction: row;
+    border-top: 1px solid #ced4da;
+
+    .logo {
+        width: 20%;
+        height: 100%;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+}

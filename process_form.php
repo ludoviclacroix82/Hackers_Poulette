@@ -17,6 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $gender = htmlspecialchars(trim($_POST['gender']));
     $genderSend = ($gender === 'noreply')?'':$gender; // Si le user n'a pas voulu mettre son genre 
 
+    $captcha = isset($_POST['website']) ? htmlspecialchars(trim($_POST['website'])) : '';
     $gender = isset($_POST['gender']) ? htmlspecialchars(trim($_POST['gender'])) : '';
     $name = isset($_POST['name']) ? htmlspecialchars(trim($_POST['name'])) : '';
     $lastName = isset($_POST['lastName']) ? htmlspecialchars(trim($_POST['lastName'])) : '';
@@ -25,6 +26,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $subject = isset($_POST['subject']) ? htmlspecialchars(trim($_POST['subject'])) : '';
     $message = isset($_POST['message']) ? htmlspecialchars(trim($_POST['message'])) : '';
 
+    echo $captcha ;
+    
     $_SESSION['gender'] = $gender;
     $_SESSION['name'] = $name;
     $_SESSION['lastName'] = $lastName;
@@ -44,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-    if ($error === 0) {
+    if ($error === 0 && $captcha === '') {
         // Initialisation de l'objet PHPMailer
         $mail = new PHPMailer(true);
         try {
@@ -70,17 +73,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $mail->Body = $genderSend.' '.$name . ' ' . $lastName . ' from:' . $country . '<br><br>' . $message;
 
             $mail->send();
-            $_SESSION['sendMail'] = true;
+            $_SESSION['sendMail'] = 'send';
             header("Location: index.php");
         } catch (Exception $e) {
             //echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-            $_SESSION['sendMail'] = false;
+            $_SESSION['sendMail'] = 'noSend';
             header("Location: index.php");
         }
     } else {
+        $_SESSION['sendMail'] = 'noEmpty';
         header("Location: index.php");
     }
 } else {
+    $_SESSION['sendMail'] = 'noSend';
     header("Location: index.php");
     exit();
 }
