@@ -1,5 +1,5 @@
 
-# Hackers_Poulette
+# Hackers Poulette
 
 The project aims to create a fully functional online contact form for the company Hackers Poulette™, which sells Raspberry Pi accessory kits. The primary objective is to enable users to easily contact the company's support team.
 
@@ -34,8 +34,10 @@ The images used in this project are provided by [Unsplash](https://unsplash.com)
 
 ## Useful Links
 
-- ![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)**GitHub Repository:** [https://github.com/ludoviclacroix82/Hackers_Poulette](https://github.com/ludoviclacroix82/Weather-App)
-- ![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white) **Mission sur GitHub:** [https://github.com/becodeorg/CRL-KELLER-7/tree/main/2.PROJECTS/6.Weather-app](https://github.com/becodeorg/CRL-KELLER-7/blob/main/2.PROJECTS/8.Hackers_Poulette)
+![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
+ 
+- **GitHub Repository:** [https://github.com/ludoviclacroix82/Hackers_Poulette](https://github.com/ludoviclacroix82/Weather-App)
+- **Mission sur GitHub:** [https://github.com/becodeorg/CRL-KELLER-7/tree/main/2.PROJECTS/6.Weather-app](https://github.com/becodeorg/CRL-KELLER-7/blob/main/2.PROJECTS/8.Hackers_Poulette)
 
 ## Screenshots
 
