@@ -6,9 +6,15 @@ nav {
     display: flex !important;
     flex-direction: row;
     box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.05);
+    @include mobile{
+        height: 50px;
+    }
 
     .menu {
         width: 80%;
+        @include mobile{
+            width: 100%;
+        }
 
         a {
             display: inline-block;
@@ -16,9 +22,12 @@ nav {
             height: 100%;
             text-decoration: none;
             padding: 5px 15px;
-            background-color: aliceblue;
+            background-color: $primaryColor;
             color: #000;
             transition: all 0.4s;
+            @include mobile{
+                font-size: 1.2rem;
+            }
             &::after{
                 border-left:1px solid rgb(243, 243, 243) ;
             }

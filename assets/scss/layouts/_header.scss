@@ -25,15 +25,17 @@ header {
         justify-content: left;
         align-items: center;
 
+        @include mobile{
+            width: 80% !important;
+        } 
+
         h1 {
             @extend .poppins-regular;
             width: 100%;
             color: $primaryColor;
             font-weight: bold;
             font-size: 2.5rem;
-            -webkit-text-stroke: 0.1px$titleBorder;
-            text-stroke: 0.1px $titleBorder;
-
+            -webkit-text-stroke: 0.1px $titleBorder;
         }
     }
 }

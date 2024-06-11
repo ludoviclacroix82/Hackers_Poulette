@@ -22,6 +22,11 @@ main {
             align-items: center;
             padding: 20px 0px;
 
+                @include mobile{
+                    width: 95% !important;
+                } 
+
+
             h2 {
                 @extend .poppins-regular;
                 width: 100%;
@@ -42,13 +47,17 @@ main {
     }
 
     .from {
-        width: 50% !important;
+        width: 50% ;
         height: auto;
         margin: 0 auto;
         border: 0;
         padding: 20px 0px;
         background-color: transparent;
 
+        @include mobile{
+            width: 90% !important;
+        }
+     
 
         form {
             width: 100%;
@@ -56,11 +65,33 @@ main {
             border-radius: 15px;
             padding: 20px;
 
-            input,
-            select {
-                width: 60% !important;
+            label{
+                @include mobile{
+                    font-size: 1.5rem !important;
+                } 
             }
 
+            input,
+            select {
+                width: 60% ;
+                @include mobile{
+                    width: 100% ;
+                    height: 60px;
+                    font-size: 1.3rem;
+                }
+            }
+            textarea {
+                @include mobile{
+                    font-size: 1.3rem;
+                }
+            }
+            .btn-primary{
+                @include mobile{
+                    width: 100%;
+                    height: 50px;
+                    font-size: 1.5rem;
+                } 
+            }
             .userName {
                 display: flex;
                 flex-direction: row;
@@ -78,6 +109,7 @@ main {
             #website {
                 display: none;
             }
+            
         }
     }
 

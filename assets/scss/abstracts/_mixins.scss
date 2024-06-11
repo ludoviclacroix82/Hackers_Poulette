@@ -1,0 +1,6 @@
+ // Mixin pour les styles tablette
+ @mixin mobile {
+   @media (max-width: 640px) {
+     @content;
+   }
+ }
