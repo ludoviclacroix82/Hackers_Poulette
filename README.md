@@ -39,9 +39,8 @@ The images used in this project are provided by [Unsplash](https://unsplash.com)
 
 ## Screenshots
 
-![App Screenshot](ressources/mobile.png)
-![desktop Screenshot](ressources/deskstop.png)
-
+![App Screenshot](ressources/mobile.png){ width=50% }
+![Desktop Screenshot](ressources/desktop.png){ width=50% }
 
 
 ## License
