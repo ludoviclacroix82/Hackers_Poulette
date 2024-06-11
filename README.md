@@ -39,6 +39,28 @@ The images used in this project are provided by [Unsplash](https://unsplash.com)
 - **GitHub Repository:** [https://github.com/ludoviclacroix82/Hackers_Poulette](https://github.com/ludoviclacroix82/Weather-App)
 - **Mission sur GitHub:** [https://github.com/becodeorg/CRL-KELLER-7/tree/main/2.PROJECTS/6.Weather-app](https://github.com/becodeorg/CRL-KELLER-7/blob/main/2.PROJECTS/8.Hackers_Poulette)
 
+## Configuring Email Sending
+
+To configure email sending with your own SMTP server, follow these steps:
+
+1. Open the `process_form.php` file in your code editor.
+
+2. Find the `// Server settings` section in the file.
+
+3. Modify the following lines by replacing the values with your own SMTP server details:
+   
+   ```php
+   // Server settings
+   //$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+   $mail->isSMTP();
+   $mail->Host = 'smtp.office365.com';  // Replace with appropriate SMTP server
+   $mail->SMTPAuth = true;
+   $mail->Username = 'your_email_address@example.com';  // Replace with your email address
+   $mail->Password = 'your_password';  // Replace with your password
+   $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+   $mail->Port = 587;
+
+
 ## Screenshots
 
 | Mobile Screenshot | Desktop Screenshot |
