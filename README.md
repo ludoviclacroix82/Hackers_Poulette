@@ -8,7 +8,7 @@ The project aims to create a fully functional online contact form for the compan
 
 ## Authors
 
-- [@ludoviclacroix82e](https://github.com/ludoviclacroix82/)
+- [@ludoviclacroix82](https://github.com/ludoviclacroix82/)
 
 
 ## Technologies Used
